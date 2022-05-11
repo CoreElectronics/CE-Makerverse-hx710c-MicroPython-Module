@@ -1,16 +1,12 @@
 from Makerverse_hx710c import Makerverse_hx710c
 from time import sleep_ms
 
+# The calibration value needs to be measured for each load cell.
+# See the guide for details: https://core-electronics.com.au/tutorials/makerverse-load-cell-kit.html
 LC = Makerverse_hx710c(calibration= 0.001420345)
-
-# LC.calibrate()
 
 while True:
     Data = LC.read_hx710_averaged(N=5)
-    # 8.91864e-4 is a calibrated value
-    # Converts ADC LSBs to grams
-    #print("{:+.2f} g".format(Data*8.91864e-4))
     print("{:+.3f} g".format(Data))
     sleep_ms(90)
-    #print(Data)
 
