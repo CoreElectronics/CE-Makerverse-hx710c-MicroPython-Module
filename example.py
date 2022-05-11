@@ -6,7 +6,7 @@ from time import sleep_ms
 LC = Makerverse_hx710c(calibration= 0.001420345)
 
 while True:
-    Data = LC.read_hx710_averaged(N=5)
+    Data = LC.read_hx710()
     print("{:+.3f} g".format(Data))
     sleep_ms(90)
 
