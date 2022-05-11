@@ -1,9 +1,7 @@
 from Makerverse_hx710c import Makerverse_hx710c
 from time import sleep_ms
 
-# The calibration value needs to be measured for each load cell.
-# See the guide for details: https://core-electronics.com.au/tutorials/makerverse-load-cell-kit.html
-LC = Makerverse_hx710c(calibration= 0.001420345)
+LC = Makerverse_hx710c()
 
 while True:
     Data = LC.read_hx710()
