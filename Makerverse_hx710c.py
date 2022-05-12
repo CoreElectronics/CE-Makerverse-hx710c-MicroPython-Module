@@ -86,7 +86,13 @@ class Makerverse_hx710c():
         print("add 'calibration=",cal,"' keyword argument to the call to Makerverse_hx710c() to make this value permanent.")
         print("Press Enter to end the calibration procedure.")
         tmp = input()
-        
+      
+    def zero(self, N = 1):
+        total = 0
+        for i in range(N):
+            total += self.read_hx710(relativeToZero = False)
+        total /= N
+        self.zero = total
         
     def read_hx710(self, relativeToZero = True):
         # Passing sm.get() through an integer array converts 32-bit sign-extended data

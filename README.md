@@ -13,13 +13,14 @@ The example below assumes that Sclk and Dout are connected to GPIO16 and GPIO17,
 For higher accuracy, the calibration procedure in the [guide](https://core-electronics.com.au/tutorials/makerverse-load-cell-kit.html) can be followed.
 
 ```python
+from machine import Pin
 from Makerverse_hx710c import Makerverse_hx710c
 from time import sleep_ms
 
 LC = Makerverse_hx710c(dataPin = Pin(17), clkPin = Pin(16), calibration=1.4397e-3)
 
 while True:
-    Data = LC.read_hx710()
+    Data = LC.read_hx710_calibrated()
     print("{:+.3f} g".format(Data))
     sleep_ms(90)
 ```
