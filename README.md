@@ -94,3 +94,11 @@ Parameter | Type | Range | Default | Description
 --- | --- | --- | --- | ---
 weight | float | 0 to 3000 | 50 | The weight of the calibration mass placed on the scales during the calibration procedure, units of grams.
 samples | int | 1 to inf | 50 | The number of samples to average when measuring the calibration mass. Note that the noise spectrum of the ADC is not "white" - there can be relatively high magnitude, long time scale, thermal drift in the ADC and load cell which is more significant than sample-to-sample noise.
+
+### setZero(N = 1)
+
+Resets the "zero" point to the currently measured weight.
+
+Parameter | Type | Range | Default | Description
+--- | --- | --- | --- | ---
+N | int | 0 to inf | 1 | The number of samples to average when measuring the zero point.

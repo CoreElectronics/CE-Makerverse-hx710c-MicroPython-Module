@@ -67,7 +67,7 @@ class Makerverse_hx710c():
             print("Reading value ", k, " of ", samples)
             zeroRaw += self.read_hx710()
         zeroRaw = zeroRaw / samples
-        print("Add the ", weight, "g calibration mass then press Enter")
+        print("Add the ", weight, "g calibration weight then press Enter")
         tmp = input()
         print("Measuring calibration point...")
         # Empty the PIO FIFO
@@ -87,7 +87,7 @@ class Makerverse_hx710c():
         print("Press Enter to end the calibration procedure.")
         tmp = input()
       
-    def zero(self, N = 1):
+    def setZero(self, N = 1):
         total = 0
         for i in range(N):
             total += self.read_hx710(relativeToZero = False)
